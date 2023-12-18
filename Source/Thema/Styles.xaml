@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Pubs.Source"
+                    xmlns:customControls="clr-namespace:Pubs.Source.CustomControls" 
+                    xmlns:converter="clr-namespace:Pubs.Converter">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Source/CustomControls/TypeTittleComboStyle.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="MenuButton" TargetType="Button" >
+        <Style.Setters>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Height" Value="80"/>
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True" >
+                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="RenderTransformOrigin" Value="0,0"/>
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Custom ComboBox For Tittles-->
+    <Style TargetType="customControls:TypesOfTittleComboBox" BasedOn="{StaticResource {x:Type ComboBox} }" >
+        <Setter Property="Width" Value="160" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <DataTemplate.Resources>
+                        <converter:StringToImageConverter x:Key="StringToImageConverter" ></converter:StringToImageConverter>
+                        <converter:BoolToVisibleConverter x:Key="BoolToVisibleConverter" ></converter:BoolToVisibleConverter>
+                        <converter:TypeOfTittleConverter x:Key="TypeOfTittleConverter" ></converter:TypeOfTittleConverter>
+                    </DataTemplate.Resources>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{Binding Converter={StaticResource StringToImageConverter}}" Width="20" Height="20"/>
+                        <TextBlock Text="{Binding Converter={StaticResource TypeOfTittleConverter}}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="DataGrid" x:Key="AuthorsDataGridStyle">
+        <Setter Property="Margin" Value="10"/>        
+
+    </Style>
+
+
+</ResourceDictionary>

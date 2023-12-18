@@ -1,0 +1,82 @@
+﻿<Window x:Class="Pubs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pubs"
+        mc:Ignorable="d"
+        WindowState="Maximized"    
+        WindowStyle="SingleBorderWindow"
+        Title="Pubs" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Pubs;component/Source/Thema/Styles.xaml">
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="MenuButton2" TargetType="Button" >
+                <Style.Setters>
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Width" Value="80"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style.Setters>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True" >
+                        <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+
+                    <Trigger Property="IsPressed" Value="True">
+                        <Setter Property="RenderTransformOrigin" Value="0,0"/>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <Button  Style="{StaticResource MenuButton}" Click="booksBtn_Click">
+                <StackPanel>
+                    <Image Source="/Source/MenuButtonsIcons/booksIcon2.png" Width="60" Height="60" />
+                    <Label Content="BOOKS" HorizontalAlignment="Center" FontFamily="Arial" />
+                </StackPanel>
+            </Button>
+            <Button  Style="{StaticResource MenuButton}" Click="writersBtn_Click" >
+                <StackPanel>
+                    <Image Source="/Source/MenuButtonsIcons/writersIcon.png" Width="60" Height="60" />
+                    <Label Content="WRITERS" HorizontalAlignment="Center" FontFamily="Arial" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" ></Frame>
+    </Grid>
+</Window>
