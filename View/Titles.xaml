@@ -61,6 +61,7 @@
             <CustomControls:TypesOfTittleComboBox 
                 SelectedItem="{Binding Path=TitlesCriteria.Type, ElementName=CodeBehind , Mode=TwoWay}"
                 IsAllOptionInclude="True"/>
+            
             <Button  Style="{StaticResource MenuButton}" Click="GetInfoBtn_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right">
                 <Image Source="/Source/MenuButtonsIcons/getInfo.png" Width="40" Height="40" />                
             </Button>

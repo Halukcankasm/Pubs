@@ -64,10 +64,106 @@
         </Setter>
     </Style>
 
-    <Style TargetType="DataGrid" x:Key="AuthorsDataGridStyle">
-        <Setter Property="Margin" Value="10"/>        
 
+
+    <!--Custom DataGrid For Tittles-->
+    <Style TargetType="DataGridCell" x:Key="AuthorsDataGridCellStyle">
+        <Style.Setters>
+            <Setter Property="Margin" Value="2,12,2,12"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Trigger>
+            <!--<Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="Foreground" Value="Black"/>
+            </Trigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self}, Path=IsSelected}" Value="True"/>
+                    <Condition Binding="{Binding ElementName=CodeBehind, Path=IsUpdate}" Value="True"/>
+                </MultiDataTrigger.Conditions>
+                <MultiDataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard Storyboard.TargetProperty="Background.Color">
+                            <ColorAnimation To="Blue" Duration="0:0:8" />
+                            <ColorAnimation To="LightGray" BeginTime="0:0:4" Duration="0:0:4" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </MultiDataTrigger.EnterActions>
+                <MultiDataTrigger.Setters>
+                    <Setter Property="Background" Value="LightGreen"/>
+                </MultiDataTrigger.Setters>
+            </MultiDataTrigger>-->
+        </Style.Triggers>
     </Style>
+
+    <Style TargetType="DataGridRow" x:Key="AuthorsDataGridRowStyle">
+        <Style.Setters>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="BorderBrush" Value="LightGray"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style.Setters>
+
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard Storyboard.TargetProperty="Background.Color">
+                            <ColorAnimation To="Orange" Duration="0:0:2" />
+                            <ColorAnimation To="LightGray" BeginTime="0:0:2" Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+            </Trigger>
+            <!--<MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsSelected" Value="True"/>
+                                <Condition Property="IsFocused" Value="True"/>
+                            </MultiTrigger.Conditions>
+                            <MultiTrigger.Setters>
+                                <Setter Property="Background" Value="Yellow"/>
+                            </MultiTrigger.Setters>
+                        </MultiTrigger>-->
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="Gray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="DataGrid" x:Key="AuthorsDataGridStyle">
+        <Setter Property="Margin" Value="20"/>
+        <Setter Property="GridLinesVisibility" Value="None"/>
+        <Setter Property="HorizontalGridLinesBrush" Value="LightGray"/>
+        <Setter Property="HeadersVisibility" Value="Column"/>
+        <Setter Property="AutoGenerateColumns" Value="True"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="LightGray"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="Background" Value="#FFFFFF"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="ColumnWidth" Value="*"/>
+        <Setter Property="RowHeaderWidth" Value="0" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="CellStyle" Value="{StaticResource AuthorsDataGridCellStyle}" />
+        <Setter Property="RowStyle" Value="{StaticResource AuthorsDataGridRowStyle}" />
+    </Style>
+    <!--Custom DataGrid For Authors-->
+
 
 
 </ResourceDictionary>

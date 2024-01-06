@@ -49,6 +49,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UIControl\bin\Debug\UIControl.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -65,6 +69,7 @@
     <Compile Include="Model\Authors.cs" />
     <Compile Include="Model\BookTypeCategory.cs" />
     <Compile Include="Model\AuthorsFilter.cs" />
+    <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\TitlesFilter.cs" />
     <Compile Include="Model\TitlesCriteria.cs" />
     <Compile Include="Model\Titles.cs" />
@@ -72,6 +77,7 @@
     <Compile Include="Source\CustomControls\TypeTittleCombo.cs" />
     <Compile Include="Source\HamburgerMenu.cs" />
     <Compile Include="ViewModel\AuthorsVM.cs" />
+    <Compile Include="ViewModel\EmployeeVM.cs" />
     <Compile Include="ViewModel\TitlesVM.cs" />
     <Compile Include="View\Authors.xaml.cs">
       <DependentUpon>Authors.xaml</DependentUpon>
@@ -130,6 +136,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,6 +169,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\MenuButtonsIcons\getInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\MenuButtonsIcons\Employee.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

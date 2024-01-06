@@ -75,6 +75,12 @@
                     <Label Content="WRITERS" HorizontalAlignment="Center" FontFamily="Arial" />
                 </StackPanel>
             </Button>
+            <Button  Style="{StaticResource MenuButton}" Click="employesBtn_Click" >
+                <StackPanel>
+                    <Image Source="/Source/MenuButtonsIcons/Employee.jpg" Width="60" Height="60" />
+                    <Label Content="Employee" HorizontalAlignment="Center" FontFamily="Arial" />
+                </StackPanel>
+            </Button>
         </StackPanel>
 
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" ></Frame>
