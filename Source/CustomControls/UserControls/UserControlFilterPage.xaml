@@ -75,53 +75,6 @@
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
-                        
-                        
-                        <!--<Trigger Property="IsChecked" Value="False">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                        
-                                        Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                        To="180"
-                                        Duration="0:0:0.4"
-                                        />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="True">
-                            <Trigger.EnterActions>
-                                <BeginStoryboard>
-                                    <Storyboard>
-                                        <DoubleAnimation
-                                        Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
-                                        To="90"
-                                        Duration="0:0:0.4"
-                                        />
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </Trigger.EnterActions>
-                        </Trigger>-->
-                        
-                        <!--<Trigger Property="IsChecked" Value="True" >
-                            <Setter Property="Background" Value="Transparent"/>
-                            <Setter Property="Content">
-                                <Setter.Value>
-                                    <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Close.png" Width="20" Height="20"/>
-                                </Setter.Value>
-                            </Setter>
-
-                        </Trigger>
-                        <Trigger Property="IsChecked" Value="False" >
-                            <Setter Property="Background" Value="Transparent" />
-                            <Setter Property="Content">
-                                <Setter.Value>
-                                    <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Open.png" Width="20" Height="20"/>
-                                </Setter.Value>
-                            </Setter>
-                        </Trigger>-->
                     </Style.Triggers>
                 </Style>
             </ToggleButton.Style>
