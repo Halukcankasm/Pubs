@@ -16,17 +16,17 @@ namespace Pubs.Converter
             switch ((String)value)
             {
                 //case BookTypeCategory.Business:
-                //    return "/Source/BookTypeIcons/businessBookIcon.png";
+                //    return "/Source/Images/BookTypeIcons/businessBookIcon.png";
                 //case Enums.ModernCook:
-                //    return "/Source/BookTypeIcons/cookBookIcon.png";
+                //    return "/Source/Images/BookTypeIcons/cookBookIcon.png";
                 //case Enums.Undecided:
-                //    return "/Source/BookTypeIcons/undecidedBookIcon.png";
+                //    return "/Source/Images/BookTypeIcons/undecidedBookIcon.png";
                 //case Enums.Popular:
-                //    return "/Source/BookTypeIcons/popularBookIcon.png";
+                //    return "/Source/Images/BookTypeIcons/popularBookIcon.png";
                 //case Enums.Psychology:
-                //    return "/Source/BookTypeIcons/psychologyBookIcon.png";
+                //    return "/Source/Images/BookTypeIcons/psychologyBookIcon.png";
                 //case Enums.Tradcook:
-                //    return "/Source/BookTypeIcons/cookBookIcon.png";
+                //    return "/Source/Images/BookTypeIcons/cookBookIcon.png";
             }
             return null;
         }

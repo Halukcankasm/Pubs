@@ -26,12 +26,12 @@ namespace Pubs
         private SqlConnection cnn { get; set; }
         Titles titles;
         Authors authors;
-        //Employee employee;
+        Employee employee;
         public MainWindow()
         {
             titles = new Titles();
             authors = new Authors();
-            //employee = new Employee();
+            employee = new Employee();
             InitializeComponent();
         }
 
@@ -47,7 +47,7 @@ namespace Pubs
 
         private void employesBtn_Click(object sender, RoutedEventArgs e)
         {
-            //MainFrame.Content = employee;
+            MainFrame.Content = employee;
         }
     }
 }

@@ -65,19 +65,19 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="5">
             <Button  Style="{StaticResource MenuButton}" Click="booksBtn_Click">
                 <StackPanel>
-                    <Image Source="/Source/MenuButtonsIcons/booksIcon2.png" Width="60" Height="60" />
+                    <Image Source="/Source/Images/MenuButtonsIcons/booksIcon2.png" Width="60" Height="60" />
                     <Label Content="BOOKS" HorizontalAlignment="Center" FontFamily="Arial" />
                 </StackPanel>
             </Button>
             <Button  Style="{StaticResource MenuButton}" Click="writersBtn_Click" >
                 <StackPanel>
-                    <Image Source="/Source/MenuButtonsIcons/writersIcon.png" Width="60" Height="60" />
+                    <Image Source="/Source/Images/MenuButtonsIcons/writersIcon.png" Width="60" Height="60" />
                     <Label Content="WRITERS" HorizontalAlignment="Center" FontFamily="Arial" />
                 </StackPanel>
             </Button>
             <Button  Style="{StaticResource MenuButton}" Click="employesBtn_Click" >
                 <StackPanel>
-                    <Image Source="/Source/MenuButtonsIcons/Employee.jpg" Width="60" Height="60" />
+                    <Image Source="/Source/Images/MenuButtonsIcons/Employee.jpg" Width="60" Height="60" />
                     <Label Content="Employee" HorizontalAlignment="Center" FontFamily="Arial" />
                 </StackPanel>
             </Button>

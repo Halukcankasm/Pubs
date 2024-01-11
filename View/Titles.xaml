@@ -2,10 +2,8 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Pubs.View"
-      xmlns:converter="clr-namespace:Pubs.Converter" 
-      xmlns:custom="clr-namespace:Pubs.Source"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:converter="clr-namespace:Pubs.Converter"
       xmlns:CustomControls="clr-namespace:Pubs.Source.CustomControls"      
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
@@ -63,7 +61,7 @@
                 IsAllOptionInclude="True"/>
             
             <Button  Style="{StaticResource MenuButton}" Click="GetInfoBtn_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right">
-                <Image Source="/Source/MenuButtonsIcons/getInfo.png" Width="40" Height="40" />                
+                <Image Source="/Source/Images/MenuButtonsIcons/getInfo.png" Width="40" Height="40" />                
             </Button>
         </StackPanel>
         
@@ -86,7 +84,7 @@
                             <Setter Property="Background" Value="Transparent"/>
                             <Setter Property="Content">
                                 <Setter.Value>
-                                    <Image Source="/Source/MenuButtonsIcons/Hamburger_icon2Close.png" Width="20" Height="20"/>
+                                    <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Close.png" Width="20" Height="20"/>
                                 </Setter.Value>
                             </Setter>
 
@@ -95,7 +93,7 @@
                             <Setter Property="Background" Value="Transparent" />
                             <Setter Property="Content">
                                 <Setter.Value>
-                                    <Image Source="/Source/MenuButtonsIcons/Hamburger_icon2Open.png" Width="20" Height="20"/>
+                                    <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Open.png" Width="20" Height="20"/>
                                 </Setter.Value>
                             </Setter>
                         </Trigger>

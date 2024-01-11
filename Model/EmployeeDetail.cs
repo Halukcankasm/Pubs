@@ -1,0 +1,11 @@
+using System;using System.ComponentModel;using System.Collections.ObjectModel;using System.Data;using System.Data.SqlClient;using MessageBox = System.Windows.MessageBox;namespace Pubs.Model{	public class EmployeeDetail : INotifyPropertyChanged	{		#region Instance Properties		private string emp_id;		public string Emp_id		{			get			{				return emp_id;			}			set			{				emp_id = value;				OnPropertyChanged("Emp_id");			}		}		private string fname;		public string Fname		{			get			{				return fname;			}			set			{				fname = value;				OnPropertyChanged("Fname");			}		}		private string minit;		public string Minit		{			get			{				return minit;			}			set			{				minit = value;				OnPropertyChanged("Minit");			}		}		private string lname;		public string Lname		{			get			{				return lname;			}			set			{				lname = value;				OnPropertyChanged("Lname");			}		}		private int? job_id;		public int? Job_id		{			get			{				return job_id;			}			set			{				job_id = value;				OnPropertyChanged("Job_id");			}		}		private byte? job_lvl;		public byte? Job_lvl		{			get			{				return job_lvl;			}			set			{				job_lvl = value;				OnPropertyChanged("Job_lvl");			}		}		private string pub_id;		public string Pub_id		{			get			{				return pub_id;			}			set			{				pub_id = value;				OnPropertyChanged("Pub_id");			}		}		private DateTime hire_date;		public DateTime Hire_date		{			get			{				return hire_date;			}			set			{				hire_date = value;				OnPropertyChanged("Hire_date");			}		}
+
+
+		private string job_desc;		public string Job_desc		{			get			{				return job_desc;			}			set			{				job_desc = value;				OnPropertyChanged("Job_desc");			}		}
+
+
+
+
+
+		#endregion Instance Properties
+		#region INotifyPropertyChanged Members        public event PropertyChangedEventHandler PropertyChanged;		private void OnPropertyChanged(string propertyName)		{			if (PropertyChanged != null)			{				PropertyChanged(this, new PropertyChangedEventArgs(propertyName));			}		}		#endregion INotifyPropertyChanged Members	}}

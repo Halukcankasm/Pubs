@@ -69,18 +69,24 @@
     <Compile Include="Model\Authors.cs" />
     <Compile Include="Model\BookTypeCategory.cs" />
     <Compile Include="Model\AuthorsFilter.cs" />
+    <Compile Include="Model\EmployeeDetail.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\TitlesFilter.cs" />
     <Compile Include="Model\TitlesCriteria.cs" />
     <Compile Include="Model\Titles.cs" />
     <Compile Include="Source\CustomControls\TypesOfTittleComboBox.cs" />
     <Compile Include="Source\CustomControls\TypeTittleCombo.cs" />
-    <Compile Include="Source\HamburgerMenu.cs" />
+    <Compile Include="Source\CustomControls\UserControls\UserControlFilterPage.xaml.cs">
+      <DependentUpon>UserControlFilterPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AuthorsVM.cs" />
     <Compile Include="ViewModel\EmployeeVM.cs" />
     <Compile Include="ViewModel\TitlesVM.cs" />
     <Compile Include="View\Authors.xaml.cs">
       <DependentUpon>Authors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Titles.xaml.cs">
       <DependentUpon>Titles.xaml</DependentUpon>
@@ -97,11 +103,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Source\CustomControls\CustomComponents.xaml">
+    <Page Include="Source\CustomControls\TypesOfTittleComboBoxStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Source\CustomControls\TypeTittleComboStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Source\CustomControls\UserControls\UserControlFilterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +120,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Authors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Employee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -147,31 +161,31 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\MenuButtonsIcons\booksIcon.png" />
-    <Resource Include="Source\MenuButtonsIcons\booksIcon2.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\booksIcon.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\booksIcon2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\MenuButtonsIcons\writersIcon.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\writersIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\BookTypeIcons\businessBookIcon.png" />
-    <Resource Include="Source\BookTypeIcons\cookBookIcon.png" />
-    <Resource Include="Source\BookTypeIcons\popularBookIcon.png" />
-    <Resource Include="Source\BookTypeIcons\psychologyBookIcon.png" />
-    <Resource Include="Source\BookTypeIcons\undecidedBookIcon.png" />
+    <Resource Include="Source\Images\BookTypeIcons\businessBookIcon.png" />
+    <Resource Include="Source\Images\BookTypeIcons\cookBookIcon.png" />
+    <Resource Include="Source\Images\BookTypeIcons\popularBookIcon.png" />
+    <Resource Include="Source\Images\BookTypeIcons\psychologyBookIcon.png" />
+    <Resource Include="Source\Images\BookTypeIcons\undecidedBookIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\MenuButtonsIcons\Hamburger_icon.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\Hamburger_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\MenuButtonsIcons\Hamburger_icon2Close.png" />
-    <Resource Include="Source\MenuButtonsIcons\Hamburger_icon2Open.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\Hamburger_icon2Close.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\Hamburger_icon2Open.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\MenuButtonsIcons\getInfo.png" />
+    <Resource Include="Source\Images\MenuButtonsIcons\getInfo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Source\MenuButtonsIcons\Employee.jpg" />
+    <Resource Include="Source\Images\MenuButtonsIcons\Employee.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

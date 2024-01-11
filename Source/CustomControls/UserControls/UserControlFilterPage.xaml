@@ -1,0 +1,151 @@
+﻿<UserControl x:Class="Pubs.Source.CustomControls.UserControls.UserControlFilterPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Pubs.Source.CustomControls.UserControls"
+             x:Name="CodeBehind"
+             DataContext="{Binding ElementName=CodeBehind}"
+             Loaded="CodeBehind_Loaded"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition  />
+        </Grid.ColumnDefinitions>
+
+
+        <ToggleButton x:Name="NavButton" 
+                      Width="20"  Height="20" 
+                      VerticalAlignment="Top"
+                      Grid.Column="1" 
+                      RenderTransformOrigin="0.5 0.5"   
+                      Background="Transparent" 
+                      BorderBrush="Transparent" 
+                      BorderThickness="0" 
+                      Checked="NavButton_Cheched"
+                      Unchecked="NavButton_UnCheched">
+            <ToggleButton.Style>
+                <Style TargetType="ToggleButton">
+                    <Style.Setters>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ToggleButton">
+                                    <Border>
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Content">
+                            <Setter.Value>
+                                <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Open.png" Width="20" Height="20"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="RenderTransform">
+                            <Setter.Value>
+                                <RotateTransform Angle="0"/>
+                            </Setter.Value>
+                        </Setter>
+                    </Style.Setters>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="Checked" >
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"                                        
+                                        To="180"
+                                        Duration="0:0:0.5"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Unchecked" >
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation
+                                        Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"                                        
+                                        To="0"
+                                        Duration="0:0:0.5"
+                                        />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        
+                        
+                        <!--<Trigger Property="IsChecked" Value="False">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                        
+                                        Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                        To="180"
+                                        Duration="0:0:0.4"
+                                        />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation
+                                        Storyboard.TargetProperty="RenderTransform.(RotateTransform.Angle)"
+                                        To="90"
+                                        Duration="0:0:0.4"
+                                        />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                        </Trigger>-->
+                        
+                        <!--<Trigger Property="IsChecked" Value="True" >
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Close.png" Width="20" Height="20"/>
+                                </Setter.Value>
+                            </Setter>
+
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False" >
+                            <Setter Property="Background" Value="Transparent" />
+                            <Setter Property="Content">
+                                <Setter.Value>
+                                    <Image Source="/Source/Images/MenuButtonsIcons/Hamburger_icon2Open.png" Width="20" Height="20"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>-->
+                    </Style.Triggers>
+                </Style>
+            </ToggleButton.Style>
+        </ToggleButton>
+
+        <StackPanel x:Name="kriteriAArea" Grid.Column="0" Width="Auto"  Background="WhiteSmoke" Orientation="Horizontal" VerticalAlignment="Stretch"  HorizontalAlignment="Stretch"  >
+            <!--<StackPanel.Style>
+                <Style TargetType="StackPanel" >
+                    <Style.Triggers>
+                        <DataTrigger Binding="{ Binding ElementName=NavButton , Path=IsChecked }" Value="True" >
+                            <DataTrigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation  Storyboard.TargetProperty="RenderTransform.ScaleX" To="0.5" Duration="0:0:0.5"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </DataTrigger.EnterActions>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </StackPanel.Style>-->
+        </StackPanel>
+        <StackPanel x:Name="dataAArea"  Grid.Column="2" Width="Auto" Background="White"  Orientation="Horizontal"  VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" />
+
+
+
+    </Grid>
+</UserControl>

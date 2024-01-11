@@ -32,7 +32,7 @@ namespace Pubs.Source.CustomControls
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IsAllOptionIncludeProperty =
-            DependencyProperty.Register("IsAllOptionInclude", typeof(bool), typeof(HamburgerMenu),
+            DependencyProperty.Register("IsAllOptionInclude", typeof(bool), typeof(TypesOfTittleComboBox),
                 new PropertyMetadata(false));
         public bool IsAllOptionInclude
         {

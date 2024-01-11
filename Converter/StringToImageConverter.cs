@@ -15,19 +15,19 @@ namespace Pubs.Converter
             switch ((String)value)
             {
                 case "business":
-                    return "/Source/BookTypeIcons/businessBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/businessBookIcon.png";
                 case "mod_cook":
-                    return "/Source/BookTypeIcons/cookBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/cookBookIcon.png";
                 case "UNDECIDED":
-                    return "/Source/BookTypeIcons/undecidedBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/undecidedBookIcon.png";
                 case "Hepsi":
-                    return "/Source/BookTypeIcons/undecidedBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/undecidedBookIcon.png";
                 case "popular_comp":
-                    return "/Source/BookTypeIcons/popularBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/popularBookIcon.png";
                 case "psychology":
-                    return "/Source/BookTypeIcons/psychologyBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/psychologyBookIcon.png";
                 case "trad_cook":
-                    return "/Source/BookTypeIcons/cookBookIcon.png";
+                    return "/Source/Images/BookTypeIcons/cookBookIcon.png";
             }
             return null;
         }
