@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pus_icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SQLDBHelper">
       <HintPath>..\SQLDBHelper\bin\Debug\SQLDBHelper.dll</HintPath>
@@ -186,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\Images\MenuButtonsIcons\Employee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pus_icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
