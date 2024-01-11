@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Pubs.Model;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -39,26 +41,22 @@ namespace Pubs.Source.CustomControls.UserControls
             }
         }
 
-        private ObservableCollection<UIElement> dataArea;
-        public ObservableCollection<UIElement> DataArea
+        public IEnumerable GridItemSource
         {
-            get
-            {
-                return dataArea;
-            }
-            set
-            {
-                dataArea = value;
-                OnPropertyChanged("DataArea");
-            }
+            get { return (IEnumerable)GetValue(GridItemSourceProperty); }
+            set { SetValue(GridItemSourceProperty, value); }
         }
+
+        // Using a DependencyProperty as the backing store for GridItemSource.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty GridItemSourceProperty = DependencyProperty.Register(nameof(GridItemSource), typeof(IEnumerable), typeof(UserControlFilterPage));
+
+
 
         private readonly Duration openCloseDuration = new Duration(TimeSpan.FromSeconds(0.5));
 
         public UserControlFilterPage()
         {
             Kriteria = new ObservableCollection<UIElement>();
-            DataArea = new ObservableCollection<UIElement>();
             InitializeComponent();
             kriteriAArea.Width = 0;
         }
@@ -73,14 +71,6 @@ namespace Pubs.Source.CustomControls.UserControls
                     kriteriAArea.Children.Add(item);
                 }
 
-            }
-
-            if (dataAArea.Children.Count == 0 && DataArea != null && DataArea.Count > 0)
-            {
-                foreach (UIElement item in DataArea)
-                {
-                    dataAArea.Children.Add(item);
-                }
             }
 
         }

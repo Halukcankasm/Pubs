@@ -13,26 +13,27 @@
       Loaded="CodeBehind_Loaded"
       Title="Employee">
 
-    <Grid Background="Transparent">
-        <uc:UserControlFilterPage >
+    <Grid Background="Transparent">        
+        <uc:UserControlFilterPage GridItemSource="{Binding ElementName=CodeBehind, Path=EmployeDetailList, Mode=TwoWay}"  >
 
             <uc:UserControlFilterPage.Kriteria>
                 <StackPanel Orientation="Horizontal" Margin="5" Height="Auto" VerticalAlignment="Top"  >
                     <Label  Content="Name"  Width="50"  />
                     <TextBox Width="100" Background="White" Height="{Binding (StackPanel.Height), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ListViewItem}}}" TextChanged="kriteriaNameChanged"/>
                 </StackPanel>
-            </uc:UserControlFilterPage.Kriteria>
-
-            <uc:UserControlFilterPage.DataArea>
-                <UIControl:UIDataGrid  ItemsSource="{Binding ElementName=CodeBehind, Path=EmployeDetailList}" Width="500" Height="200">
-                    
-                </UIControl:UIDataGrid>
-            </uc:UserControlFilterPage.DataArea>
+            </uc:UserControlFilterPage.Kriteria>           
 
         </uc:UserControlFilterPage>
 
-        <UIControl:UIDataGrid  ItemsSource="{Binding ElementName=CodeBehind, Path=EmployeDetailList}" Width="500" Height="200">
+        <!--<UIControl:UIDataGrid  ItemsSource="{Binding ElementName=CodeBehind, Path=EmployeDetailList}"  AutoGenerateColumns="False" ColumnWidth="*">
+            <UIControl:UIDataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{ Binding Emp_id }" />
+                <DataGridTextColumn Header="First Name" Binding="{ Binding Fname }" />
+                <DataGridTextColumn Header="Last Name" Binding="{ Binding Lname }"  />
+                <DataGridTextColumn Header="Hire Date" Binding="{ Binding Hire_date ,StringFormat={}{0:d} }" />
+                <DataGridTextColumn Header="Job" Binding="{ Binding Job_desc }" />
+            </UIControl:UIDataGrid.Columns>
 
-        </UIControl:UIDataGrid>
+        </UIControl:UIDataGrid>-->
     </Grid>
 </Page>

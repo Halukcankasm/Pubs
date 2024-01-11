@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:Pubs.Source.CustomControls.UserControls"
              x:Name="CodeBehind"
              DataContext="{Binding ElementName=CodeBehind}"
+             xmlns:UIControl="clr-namespace:UIControl;assembly=UIControl"
              Loaded="CodeBehind_Loaded"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -143,7 +144,9 @@
                 </Style>
             </StackPanel.Style>-->
         </StackPanel>
-        <StackPanel x:Name="dataAArea"  Grid.Column="2" Width="Auto" Background="White"  Orientation="Horizontal"  VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" />
+        <Grid x:Name="dataAArea"  Grid.Column="2"  Background="White"   VerticalAlignment="Stretch"  HorizontalAlignment="Stretch" >
+            <UIControl:UIDataGrid Grid.Column="2" ItemsSource="{Binding ElementName=CodeBehind, Path=GridItemSource, Mode=TwoWay}" Width="Auto" ></UIControl:UIDataGrid>
+        </Grid>
 
 
 
