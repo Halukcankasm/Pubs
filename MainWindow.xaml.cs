@@ -27,11 +27,14 @@ namespace Pubs
         Titles titles;
         Authors authors;
         Employee employee;
+        Sales sales;
+
         public MainWindow()
         {
             titles = new Titles();
             authors = new Authors();
             employee = new Employee();
+            sales = new Sales();
             InitializeComponent();
         }
 
@@ -48,6 +51,11 @@ namespace Pubs
         private void employesBtn_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = employee;
+        }
+
+        private void salesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = sales;
         }
     }
 }

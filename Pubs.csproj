@@ -74,6 +74,9 @@
     <Compile Include="Model\AuthorsFilter.cs" />
     <Compile Include="Model\EmployeeDetail.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Sales.cs" />
+    <Compile Include="Model\SalesCriteria.cs" />
+    <Compile Include="Model\SalesDetail.cs" />
     <Compile Include="Model\TitlesFilter.cs" />
     <Compile Include="Model\TitlesCriteria.cs" />
     <Compile Include="Model\Titles.cs" />
@@ -84,12 +87,16 @@
     </Compile>
     <Compile Include="ViewModel\AuthorsVM.cs" />
     <Compile Include="ViewModel\EmployeeVM.cs" />
+    <Compile Include="ViewModel\SalesVM.cs" />
     <Compile Include="ViewModel\TitlesVM.cs" />
     <Compile Include="View\Authors.xaml.cs">
       <DependentUpon>Authors.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Employee.xaml.cs">
       <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Sales.xaml.cs">
+      <DependentUpon>Sales.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Titles.xaml.cs">
       <DependentUpon>Titles.xaml</DependentUpon>
@@ -127,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Sales.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +203,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="pus_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Images\MenuButtonsIcons\salesIcon.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
