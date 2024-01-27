@@ -75,16 +75,15 @@ namespace Pubs.Source.CustomControls.UserControls
 
         }
 
-        private void NavButton_Cheched(object sender, RoutedEventArgs e)
+        private void NavButton_Cheched(object sender, RoutedEventArgs e)//IsChecked = True
         {
             var maxWidth = Kriteria.Max(y => y.DesiredSize.Width);
-            var maxHeight = Kriteria.Max(x => x.DesiredSize.Height);
 
             DoubleAnimation withAnimation = new DoubleAnimation(maxWidth, openCloseDuration);
             kriteriAArea.BeginAnimation(WidthProperty, withAnimation);
         }
 
-        private void NavButton_UnCheched(object sender, RoutedEventArgs e)
+        private void NavButton_UnCheched(object sender, RoutedEventArgs e)//IsChecked = False
         {
             DoubleAnimation withAnimation = new DoubleAnimation(0, openCloseDuration);
             kriteriAArea.BeginAnimation(WidthProperty, withAnimation);
