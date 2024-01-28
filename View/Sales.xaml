@@ -24,7 +24,7 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Orientation="Vertical" Background="NavajoWhite" Width="250" >
+        <StackPanel Grid.Column="0" Orientation="Vertical" Background="LightGray"  Width="260">
             <StackPanel.Style>
                 <Style TargetType="StackPanel">
                     <Style.Triggers>
@@ -39,7 +39,7 @@
                             <DataTrigger.ExitActions>
                                 <BeginStoryboard>
                                     <Storyboard>
-                                        <DoubleAnimation  Storyboard.TargetProperty="Width" To="250" Duration="0:0:0.5"/>
+                                        <DoubleAnimation  Storyboard.TargetProperty="Width" To="260" Duration="0:0:0.5"/>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </DataTrigger.ExitActions>
@@ -47,7 +47,7 @@
                     </Style.Triggers>
                 </Style>
             </StackPanel.Style>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="3">
                 <Label Content="Tittle Type" Width="100" />
                 <ComboBox ItemsSource="{Binding ElementName=CodeBehind , Path=TypesOfTitles, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding ElementName=CodeBehind, Path=SalesCriterias.Title_type}" Width="150">
                     <ComboBox.ItemTemplate>
@@ -60,7 +60,7 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Margin="3">
                 <Label Content="Store Name " Width="100" />
                 <ComboBox ItemsSource="{Binding ElementName=CodeBehind , Path=StoreNames}" SelectedItem="{Binding ElementName=CodeBehind, Path=SalesCriterias.Str_name}" Width="150">
                     <ComboBox.ItemTemplate>
@@ -72,8 +72,46 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </StackPanel>
-            <DatePicker SelectedDate="{Binding ElementName=CodeBehind, Path=SalesCriterias.Ord_date}"/>
+            <DatePicker SelectedDate="{Binding ElementName=CodeBehind, Path=SalesCriterias.Ord_date}" Margin="3"/>
+            <Button Click="GetInfo_Click" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Width="35" Height="35" Margin="5" HorizontalAlignment="Right">
+                <Image  Source="/Source/Images/MenuButtonsIcons/getData.ico" Width="30" Height="30" HorizontalAlignment="Right"  />
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Setters>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border >
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style.Setters>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True" >
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
 
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="RenderTransformOrigin" Value="0,0"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
 
         <Grid Grid.Column="1" VerticalAlignment="Top" >
@@ -141,7 +179,7 @@
 
 
         <ListView Grid.Column="2" ItemsSource="{Binding ElementName=CodeBehind, Path=SalesList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                   HorizontalAlignment="Stretch"  VerticalAlignment="Top"  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                  HorizontalAlignment="Stretch"  VerticalAlignment="Top"  ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="Transparent" BorderThickness="0">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -150,26 +188,70 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Vertical" >
-                        <TextBlock Text="{Binding Ord_date , StringFormat={}{0:MM/dd/yyyy}}" />
-                        <TextBlock Text="{Binding Ord_num }" />
-                        <TextBlock Text="{Binding Payterms}" />
-                        <TextBlock Text="{Binding Qty}" />
+
+                        <StackPanel Orientation="Horizontal"  >
+                            <Label Content="Store :" />
+                            <TextBlock Text="{Binding Stor_name}" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"  >
+                            <Label Content="Order Date:" />
+                            <TextBlock Text="{Binding Ord_date , StringFormat={}{0:MM/dd/yyyy}}" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Label Content="Order Number:" />
+                            <TextBlock Text="{Binding Ord_num }" VerticalAlignment="Center"  />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" >
+                            <Label Content="Payterms(Ödeme Yöndetemi):"  />
+                            <TextBlock Text="{Binding Payterms}" VerticalAlignment="Center"  />
+                        </StackPanel>
+
+                        <DockPanel   >
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <Label Content="Qty:" />
+                                <TextBlock Text="{Binding Qty}" VerticalAlignment="Center"  />
+                            </StackPanel>
+                            <Image Source="{Binding TitleType, Converter={StaticResource StringToImageConverter}}" VerticalAlignment="Center" HorizontalAlignment="Right" Width="20" Height="20"/>                            
+                        </DockPanel>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Style.Setters>
+                        <EventSetter Event="MouseDoubleClick" Handler="ListViewItem_MouseDoubleClick" />
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="ListViewItem">
-                                    <Border VerticalAlignment="Center" BorderThickness="2" BorderBrush="Black" CornerRadius="10" Padding="3" Margin="3">
+                                    <Border VerticalAlignment="Center" BorderThickness="1" BorderBrush="LightGray" CornerRadius="10" Padding="3" Margin="3">
                                         <ContentPresenter/>
+                                        <Border.Style>
+                                            <Style TargetType="Border">
+                                                <Style.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True" >
+                                                        <Setter Property="Background" Value="LightGray"/>
+                                                        <Setter Property="BorderThickness" Value="0" />
+                                                        <Setter Property="BorderBrush" Value="Transparent"/>
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>                                            
+                                        </Border.Style>
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style.Setters>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True" >
+                            <Setter Property="Background" Value="Black"/>
+                            <Setter Property="BorderThickness" Value="0" />
+                            <Setter Property="BorderBrush" Value="Transparent"/>
+                        </Trigger>
+                    </Style.Triggers>
+                    
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>

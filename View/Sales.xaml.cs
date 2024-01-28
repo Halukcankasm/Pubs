@@ -132,5 +132,20 @@ namespace Pubs.View
 
         #endregion INotifyPropertyChanged Members
 
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedSale = (SalesDetail)(((ListBoxItem)sender).Content);
+        }
+
+
+        private void GetInfo_Click(object sender, RoutedEventArgs e)
+        {
+            if (SalesCriterias.Title_type == "Hepsi" || SalesCriterias.Str_name == "Hepsi")
+            {
+                SalesCriterias.Title_type = null;
+                SalesCriterias.Str_name = null;
+            }
+            SalesList = salesVM.GetSalesDetailWithColumn(SalesCriterias);
+        }
     }
 }
