@@ -1,0 +1,51 @@
+﻿<Window x:Class="Pubs.View.PopUp.SalesPopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pubs.View.PopUp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        xmlns:converter="clr-namespace:Pubs.Converter"
+        WindowStyle="SingleBorderWindow"
+        Title="SalesPopUp" Height="450" Width="700"
+        x:Name="CodeBehind"
+        Loaded="CodeBehind_Loaded"
+        DataContext="{Binding ElementName=CodeBehind}"
+        >
+    <Window.Resources>
+        <converter:StringToImageConverter x:Key="StringToImageConverter" ></converter:StringToImageConverter>
+        <converter:BoolToVisibleConverter x:Key="BoolToVisibleConverter" ></converter:BoolToVisibleConverter>
+        <converter:TypeOfTittleConverter x:Key="TypeOfTittleConverter" ></converter:TypeOfTittleConverter>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" Width="Auto" Height="Auto">
+            <Image Source="/Source/Images/MenuButtonsIcons/SalesPopUpIcon.Png" VerticalAlignment="Center" />
+        </StackPanel>
+
+
+        <StackPanel Grid.Column="1" >
+            <StackPanel Margin="5" >
+                <Label Content="Tittle:" FontSize="20" FontWeight="Bold"/>
+                <TextBox BorderBrush="Transparent" BorderThickness="0" TextWrapping="Wrap" Text="{Binding ElementName=CodeBehind , Path=SalesDetailContract.Title, Mode=TwoWay}" FontSize="12"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Margin="5" >
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Type:" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center"/>
+                    <Image HorizontalAlignment="Right" VerticalAlignment="Center" Source="{Binding SalesDetailContract.TitleType, Converter={StaticResource StringToImageConverter}}" Width="20" Height="20"/>
+                </StackPanel>
+                
+                <TextBox BorderBrush="Transparent" BorderThickness="0" TextWrapping="Wrap" Text="{Binding ElementName=CodeBehind , Path=SalesDetailContract.TitleType, Mode=TwoWay}" FontSize="12"/>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

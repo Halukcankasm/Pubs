@@ -1,4 +1,5 @@
 ﻿using Pubs.Model;
+using Pubs.View.PopUp;
 using Pubs.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -119,6 +120,24 @@ namespace Pubs.View
             StoreNames.Insert(0, "Hepsi");
         }
 
+        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedSale = (SalesDetail)(((ListBoxItem)sender).Content);
+            SalesPopUp salesPopUp = new SalesPopUp(selectedSale);
+            salesPopUp.ShowDialog();
+        }
+
+
+        private void GetInfo_Click(object sender, RoutedEventArgs e)
+        {
+            if (SalesCriterias.Title_type == "Hepsi" || SalesCriterias.Str_name == "Hepsi")
+            {
+                SalesCriterias.Title_type = null;
+                SalesCriterias.Str_name = null;
+            }
+            SalesList = salesVM.GetSalesDetailWithColumn(SalesCriterias);
+        }
+
 
         #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
@@ -132,20 +151,6 @@ namespace Pubs.View
 
         #endregion INotifyPropertyChanged Members
 
-        private void ListViewItem_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            var selectedSale = (SalesDetail)(((ListBoxItem)sender).Content);
-        }
 
-
-        private void GetInfo_Click(object sender, RoutedEventArgs e)
-        {
-            if (SalesCriterias.Title_type == "Hepsi" || SalesCriterias.Str_name == "Hepsi")
-            {
-                SalesCriterias.Title_type = null;
-                SalesCriterias.Str_name = null;
-            }
-            SalesList = salesVM.GetSalesDetailWithColumn(SalesCriterias);
-        }
     }
 }

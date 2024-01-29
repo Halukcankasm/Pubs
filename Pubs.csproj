@@ -95,6 +95,9 @@
     <Compile Include="View\Employee.xaml.cs">
       <DependentUpon>Employee.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PopUp\SalesPopUp.xaml.cs">
+      <DependentUpon>SalesPopUp.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Sales.xaml.cs">
       <DependentUpon>Sales.xaml</DependentUpon>
     </Compile>
@@ -134,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PopUp\SalesPopUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -209,6 +216,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Source\Images\MenuButtonsIcons\getData.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Images\MenuButtonsIcons\SalesPopupImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Images\MenuButtonsIcons\SalesPopUpIcon.Png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
