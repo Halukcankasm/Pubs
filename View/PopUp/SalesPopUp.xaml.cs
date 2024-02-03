@@ -19,35 +19,34 @@ namespace Pubs.View.PopUp
     /// <summary>
     /// Interaction logic for SalesPopUp.xaml
     /// </summary>
-    public partial class SalesPopUp : Window
+    public partial class SalesPopUp : Window, INotifyPropertyChanged
     {
-        private SalesDetail salesDetail;
-        public SalesDetail SalesDetailContract 
+
+        private SalesDetail salesDetailContract;
+        public SalesDetail SalesDetailContract
         {
             get
             {
-                return salesDetail;
+                return salesDetailContract;
             }
             set
             {
-                salesDetail = value;
+                salesDetailContract = value;
                 OnPropertyChanged("SalesDetailContract");
             }
         }
+
+
         public SalesPopUp(SalesDetail salesDetail)
-        {
-            this.SalesDetailContract = new SalesDetail();
-            this.SalesDetailContract = salesDetail;
+        {          
+
             InitializeComponent();
-        }
-        private void CodeBehind_Loaded(object sender, RoutedEventArgs e)
-        {
-            GetInfo();
+
+            this.SalesDetailContract = salesDetail;
         }
 
-        private void GetInfo()
+        private void CodeBehind_Loaded(object sender, RoutedEventArgs e)
         {
-            
         }
 
 
@@ -60,6 +59,7 @@ namespace Pubs.View.PopUp
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
 
         #endregion INotifyPropertyChanged Members
 
